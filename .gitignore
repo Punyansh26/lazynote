@@ -84,3 +84,8 @@ yarn-error.log*
 *.pem
 
 .agents/
+
+
+backend/notebooks/result
+
+backend/notebooks/sample
