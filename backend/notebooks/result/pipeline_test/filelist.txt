@@ -1,0 +1,5 @@
+file '/run/media/rtx/Files/Code/ProProjects/lazynote/backend/notebooks/result/pipeline_test/server_storage/sess_demo_101_chunk_000.wav'
+file '/run/media/rtx/Files/Code/ProProjects/lazynote/backend/notebooks/result/pipeline_test/server_storage/sess_demo_101_chunk_001.wav'
+file '/run/media/rtx/Files/Code/ProProjects/lazynote/backend/notebooks/result/pipeline_test/server_storage/sess_demo_101_chunk_002.wav'
+file '/run/media/rtx/Files/Code/ProProjects/lazynote/backend/notebooks/result/pipeline_test/server_storage/sess_demo_101_chunk_003.wav'
+file '/run/media/rtx/Files/Code/ProProjects/lazynote/backend/notebooks/result/pipeline_test/server_storage/sess_demo_101_chunk_004.wav'

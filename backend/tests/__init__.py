@@ -1,0 +1,1 @@
+"""Lazy Note test suite."""

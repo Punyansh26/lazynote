@@ -4,6 +4,11 @@ These rules apply to work in `docs/` and take precedence over general project gu
 
 ## Scope and safety
 
+- Write code only when the user explicitly tells you to do so.
+- Write only what the user asked for; do not add extra improvements, refactors, or proactive changes.
+- Do not write code autonomously or make assumptions beyond the request.
+- Do not do anything outside the explicit instruction; if it is not asked for, do not do it.
+- Read and review files freely; this is allowed and encouraged as a read-only workflow.
 - Treat documentation tasks as research and writing tasks only. Do not execute code, shell commands, scripts, tests, builds, migrations, database queries, or other operational actions while working in `docs/`.
 - Do not create or modify application code, scripts, configuration, infrastructure, or other non-Markdown files. Do not write code or executable examples unless the user explicitly asks for them.
 - Create or edit Markdown documentation only, and only to the extent requested. Do not make implementation changes as a side effect of documenting an issue.

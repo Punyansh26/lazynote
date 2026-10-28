@@ -1,5 +1,11 @@
 fastapi
+uvicorn[standard]
 pydantic
-sqlalchemy
+pydantic-settings
+sqlalchemy[asyncio]
 asyncpg
 alembic
+python-multipart
+aiofiles
+greenlet
+httpx

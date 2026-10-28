@@ -1,0 +1,4 @@
+# Ignore all uploaded audio files and artifacts
+*
+!.gitignore
+!.gitkeep

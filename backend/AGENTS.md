@@ -2,6 +2,15 @@
 
 This file defines the engineering guidelines, architectural invariants, and specifications for all agents and developers working in `backend/`.
 
+## Mandatory scope rule
+
+- Write code only when the user explicitly tells you to do so.
+- Write only what the user asked for; do not add extra improvements, refactors, or proactive changes.
+- Do not write code autonomously or make assumptions beyond the request.
+- Do not do anything outside the explicit instruction; if it is not asked for, do not do it.
+- Do not execute code, scripts, tests, builds, migrations, or other runtime actions unless the user explicitly instructs you to do so.
+- Reading and reviewing files is allowed; this is a read-only workflow, not execution.
+
 ---
 
 ## 1. Stack & Tooling Invariants

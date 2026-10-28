@@ -54,20 +54,32 @@ Google Gemini 2.5 Flash (Generates structured study notes with KaTeX math)
 
 ```
 backend/
+├── alembic/                 # Alembic async database migrations
+│   ├── versions/            # Migration scripts (e.g. 0001_initial_schema.py)
+│   └── env.py               # Async migration runner connected to lazynote models
+├── alembic.ini              # Alembic configuration
 ├── src/lazynote/
-│   ├── main.py              # FastAPI application factory & lifespan
-│   ├── config.py            # Pydantic Settings (.env configuration)
+│   ├── __init__.py          # Package metadata & version
+│   ├── main.py              # FastAPI application factory, lifespan & CORS
+│   ├── config.py            # Pydantic BaseSettings & async database URL normalization
 │   ├── database/
+│   │   ├── __init__.py      # Base, engine, async_session_factory, get_db export
 │   │   ├── session.py       # Async SQLAlchemy engine & get_db dependency
 │   │   └── models/          # RecordingSession, AudioChunk, TranscriptSegment, NoteArtifact
-│   ├── schemas/             # Request & response Pydantic schemas
-│   ├── router/              # API route controllers (/sessions, /chunks, /notes)
+│   ├── schemas/             # Pydantic request/response schemas (session, chunk, transcript)
+│   ├── router/              # API endpoints (/health, /api/v1/sessions, /chunks, /notes)
 │   └── services/            # Storage, AudioDSP, Silero VAD, STT, and Notes services
 ├── tests/
+│   ├── conftest.py          # Pytest async fixtures
+│   ├── unit/                # Unit test suite (test_config.py)
+│   ├── integration/         # Integration test suite (test_health.py)
 │   └── sample/              # Sample lecture audio for pipeline testing
-├── scripts/                 # Utility and pipeline verification scripts
-├── uploads/                 # Local chunk and master audio storage
-├── pyproject.toml           # Project dependencies managed via uv
+├── scripts/                 # Standalone utility & pipeline verification scripts
+├── notebooks/               # Exploratory audio analysis and DSP experimentation
+├── uploads/                 # Local chunk and master audio storage (.gitignore protected)
+├── pyproject.toml           # Project dependencies & build config managed via uv
+├── requirements.txt         # Pinned requirements mirror
+├── .env.example             # Documented environment template
 └── AGENTS.md                # Engineering invariants & architecture rules for agents
 ```
 
@@ -82,6 +94,11 @@ uv sync
 # Run database migrations
 uv run alembic upgrade head
 
+# Run tests
+uv run pytest
+
 # Start development server
 uv run uvicorn lazynote.main:app --reload --port 8000
+# or
+uv run lazynote
 ```
